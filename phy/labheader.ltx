@@ -1,0 +1,142 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage{siunitx}
+\usepackage[tikz]{bclogo}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+%\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+\usepackage{soul}
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{University of Kentucky Department of Physics} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge \so{Lab Worksheet 1}\\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{
+\begin{tabular}{rl}
+Principal Investigator &  Michael Raba \tabularnewline
+Researcher & Stuart Hamilton \tabularnewline
+%sjha252@g.uky.edu
+Data Analysis &  Michael Hallstrom \tabularnewline
+%mikehall0995@gmail.com
+\end{tabular}
+} % Your name
+
+\date{\normalsize\today\\Due 7 Sept} % Today's date or a custom date
+
+
+\usepackage{tikz}
+\newcommand*\cx[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+%\section*{Problem title}
+\stepcounter{section}
+\begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 1}
+  Read Lab 2. 
+\end{bclogo}
+\begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 2}
+  \cx{1} What does a function generator do? \cx{2} Why are we using a function generator in
+  part 3 of the lab? (see page 8 of lab manual).
+\end{bclogo}
+
+\begin{itemize}
+\item[\cx{1}] From Wikipedia: generate different types of electrical waveforms over a wide range of frequencies. Some of the most common waveforms produced by the function generator are the sine, square, triangular and sawtooth shapes.
+\item[\cx{2}]
+  We are using a function generator to vary the voltage with time. In particular
+  we switch off and on the voltage using a square waveform.
+  
+  \includegraphics[scale=.25]{3.png}
+  
+  Our goal is to show that the resistance of the bulb depends on something other
+  than the applied voltage. So we vary the current direction which makes the
+  bulb hot and it's resistance changes with temperature.
+\end{itemize}
+
+\begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 3}
+  During lab 1 we constructed the following circuit. \item[\cx{1}]What quantity is the
+  Ammeter measuring? \item[\cx{2}]Is this measurment valid for the bulb, the resistor or the voltmeter?
+
+  \includegraphics[scale=.5]{1.png}
+\end{bclogo}
+
+\cx{1} Ammeter measures current $I$ from power source.
+
+\cx{2} valid for both the bulb and resistor. No current goes through the
+voltmeter because an ideal voltmeter has infinite resistance.
+
+%There is a junction after bulb which splits the current value $I$.
+
+
+\begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 4}
+  Consider the following graph. Is the linear trendline appropriate for the data
+  points that have been presented? Explain why or why not.
+  \newline
+  \includegraphics[scale=.75]{2.png}
+\end{bclogo}
+
+\textbf{No}, the linear trendline \textbf{is not appropriate} for the data points $\because$
+the trendline is not fully within the error bars (the first point is outside). 
+
+\end{document}

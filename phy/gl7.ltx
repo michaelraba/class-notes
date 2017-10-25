@@ -1,0 +1,252 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a3, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{multicol}
+%\sisetup{output-exponent-marker=\ensuremath{\mathrm{e}}}
+\usepackage{soul}
+\usepackage[tikz]{bclogo}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+%\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+
+\title{	
+\normalfont \normalsize 
+\textsc{University of Kentucky Department of Physics} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Lab 7: Floating Wire \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Michael Isaiah Raba} % Your name
+
+\date{\normalsize\today\\Due 18 Oct 11:59} % Today's date or a custom date
+
+
+\usepackage{tikz}
+\newcommand*\cx[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ latexsym }
+\usepackage{graphicx}
+\usepackage[americanresistors,siunitx]{circuitikz}
+\newcommand{\ihat}{\hat{\textbf{\i}}}
+\newcommand{\jhat}{\hat{\textbf{\j}}}
+\usepackage[margin=0.25in]{geometry}
+%\usepackage{tabular}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotstableread{
+x         y    y-max  y-min
+Lighting  0.12 0.31   0.03
+Computers 0.06 0.12   0.01 
+Total     0.07 0.14   0.02
+}{\mytable}
+
+
+\begin{document}
+\begin{multicols}{2}
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+%\section*{Problem title}
+%\stepcounter{section}
+
+\section{Introduction}
+
+The purpose of this experiment is to determine the value of the
+\textbf{magnetic permeability of free space} $\mu_0$, which is the measure of the ability of
+free space to support the formation of a magnetic field $\mathbf{B}$ within
+itself. The \textbf{exact} value\footnote{Source:} of $\mu_0$ is $\SI{4\pi
+  e-7}{\newton\per\ampere\squared}$. We experimentally estimate this value by
+means of the following ``floating wire experiment'': two wires held within a
+small distance $d$ from each other, though which an identical electric current
+$I$ passes. This creates an \textbf{induced} magnetic field
+$\mathbf{B}_\text{ind} $ in both wires, and a concomitant magnetic force
+$\mathbf{F}_\mathbf{B}$. We adjust the current such that the induced
+$\mathbf{F}_\mathbf{B}$ balances with gravitational force $\mathbf{F}_g$. Hence
+by writing Newton's second law $\sum \mathbf{F}_\text{net} =0 $ for the force balance, we may solve in closed
+form for $\mu_0$.
+
+\begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 20}
+  Explain how group ariived at calculation of $\mu_0$ Start your argument with
+  newtons second law and include your solution to prelab question 2
+\end{bclogo}
+
+
+\section{Data Analysis}
+
+%\begin{tikzpicture}[scale=0.9] 
+%\centering
+%\begin{axis} [symbolic x coords={Lighting,Computers,Total},xtick=data]
+%\addplot+[forget plot,only marks] 
+% plot[error bars/.cd, y dir=both, y explicit]
+% table[x=x,y=y,y error plus expr=\thisrow{y-max},y error minus expr=\thisrow{y-min}] {\mytable};
+%\end{axis} 
+%\end{tikzpicture}
+
+
+\begin{tabular}{c|ccccc}
+           & Trial1	& Trial2  & 	Trial3& Trial4& Trial5 \\  
+  \hline 
+Weight[mg] & 10	    & 20	    &   50	  & 70	  & 100		 \\   
+Amps  [A ]    & 6.5	  &   8	    &     10  &   12	&   14	 \\    
+Space [mm]  & 6.22	  & 6.08	  &   5.7	  & 5.45	& 5.1		 \\    
+%Mu	       & 0.00000034	& 0.00000044	& 0.00000066 & 	0.00000061 & 	0.00000060		
+$\mu_0 [\si{\newton\per\ampere\squared}]  $& $\num{3.4e-7}$ & $\num{4.4e-7}$& $\num{6.6e-7}$& $\num{6.1e-7}$	& $\num{6.0e-7}$	
+                                                       
+\end{tabular}
+
+
+
+\begin{align}
+  F_\text{net}&=\sum F=  \left(    \frac{\mu_0 i^2L}{2\pi r}-mg \right)\Rightarrow   \left(    \frac{\mu_0 i^2L}{2\pi r}-mg \right)= 0 \\
+  &\Rightarrow \mu_0 = \frac{(mg)(2\pi r)}{i^2L}
+\end{align}
+
+\subsection{Calculation of Uncertainty $\delta \mu_0$}
+
+\begin{enumerate}[label*=\arabic*.]
+  \item  $\mu_0 = \frac{(mg)(2\pi r)}{i^2L}$
+  \item $\bar{\mu}_0 =  \frac{ \num{3.4e-7}+\num{4.4e-7}+
+      \num{6.6e-7}+\num{6.0e-7} }{4} = \num{6.62e-7}$  
+    \item $\bar{r}=\frac{ 6.22+6.08+5.7+5.45+5.1  }{5}= \SI{5.71}{\meter} $
+    \item $\delta r_1= \SI{0.05}{\milli\meter}$
+    \item To find $\delta r_2$, we refer to the figure below.
+
+      \includegraphics[scale=0.5]{lab7fig1.png}
+      
+\begin{enumerate}[label*=\arabic*.]
+
+\item $\frac{\delta_\text{laser}}{L_\text{mirror to clipboard}} =
+  \tan{2\theta}\,\Rightarrow
+  \frac{\SI{6.22}{\milli\meter}}{\SI{2060}{\milli\meter}} = \tan{2\theta}\approx
+  2\theta$
+  \item $\theta = \frac12 \frac{\SI{6.22}{\milli\meter}}{\SI{2060}{\milli\meter}} = \num{1.5e-3}$
+    \item $ \frac{\delta r_2}{L_\text{fulcrum to wire }} =  \tan{\theta}\approx\theta $
+      \item $L_\text{fulcrum to wire } \tan{\theta} = \delta r_2 $
+      \item $\delta r_2 =(\SI{215}{\milli\meter})(\num{1.5e-3} )  = \SI{.3225}{\milli\meter} $
+\end{enumerate}
+\item Thus $\delta r = \delta r_1 + \delta r_2  = \left( 0.05 +
+    0.3225\right)\si{\milli\meter}=\SI{0.3725}{\milli\meter } $
+    \item $\bar{i}= \frac{ 6.66+8.16+10.16+12.16+14.16 }{5} = \SI{10.26}{\ampere} $
+  \item
+    \begin{align*}
+     % \delta \mu_0 &=  \bar{\mu}_0 \left(\frac{\delta m}{\bar{m}}+ \frac{\delta r}{\bar{r}}+ 2\cdot\frac{\delta i }{\bar{i}}+ \frac{\delta l}{\bar{l}}   \right)   \\
+      %\delta \mu_0 &=  \bar{\mu}_0 \left(\frac{\delta r}{\bar{r}}+ 2\cdot\frac{\delta i }{\bar{i}}+ \frac{\delta l}{\bar{l}}   \right)   \\
+      \delta \mu_0 &=  \bar{\mu}_0 \left(\frac{\delta r}{\bar{r}}+ \frac{\delta i }{\bar{i}}+ \frac{\delta l}{\bar{l}}   \right)   \\
+      &=  \num{6.62e-7} \left( \frac{.37}{5.71} +\frac{0.05}{10.26 }+\frac{0.05}{26.6}\right) \\
+     % &=  \num{6.62e-7} \left( \frac{0.05}{5.71} +2\cdot\frac{0.05}{10.26 }+\frac{0.05}{26.6}\right) \\
+      % &= \SI{1.35e-8}{\newton\per\ampere\squared} 
+      &= \SI{1.45e-9}{\newton\per\ampere\squared} 
+    \end{align*}
+    \item Then $\mu_0 = \left(  \num{1.45e-9}\pm \num{1.27e-9} \right)
+      \si{\newton\per\ampere\squared}$\footnote{This answers Problem 22}
+    \end{enumerate}
+
+
+
+
+\section{Procedure}
+\section{Conclusion}
+
+\begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 21}
+  Your graphic must provide a visual representation of your final results so the
+  ta can assess your data quickly. make sure you include the scientifically
+  accepted value of $\mu_0$ in your graph
+\end{bclogo}
+
+\begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 22}
+  make sure you report on your final results in the form $\mu_0=\bar{\mu}_0\pm
+  \delta \mu_0$.
+\end{bclogo}
+
+\begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 23}
+  What is the largest source of error in this experiment? Is it random or
+  systematic? Could this error account for the discrepancy between your value
+  and the scientifically accepted value? 
+\end{bclogo}
+
+Largest source of error is measurement of $r$, the distance between the wires.
+This is a fine measurement which blahblah...
+
+\begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 24}
+  Remember that the report should be two pages or less and follow the guidelines.
+\end{bclogo}
+\end{multicols}
+
+%\pgfplotstabletypeset[sci zerofill]{
+%a b
+%5000 1.234e5
+%6000 1.631e5
+%7000 2.1013e5
+%9000 1000000
+%}
+
+
+
+
+% Length of T(cm):	Space btw Currents(mm)	Amps(A)	Filcrum distance(cm)	Clipboard Distance(cm)	Gravity	SOurce uncertainty 
+% Value	26.6	6.5	N/A	21.5	206	9.81	
+% Uncertainty	0.05	0.005	0.5	0.05	0.05		only +.16
+
+\par
+
+
+\par 
+
+%  0.000001256							
+
+
+
+\end{document}

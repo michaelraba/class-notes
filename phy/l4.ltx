@@ -1,0 +1,260 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage{siunitx}
+\usepackage[tikz]{bclogo}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+%\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{University of Kentucky Department of Physics} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Lab 4: Series and Parallel Resistors \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{
+\begin{tabular}{rl}
+Author &  Michael Raba \tabularnewline
+Collaborators & Stuart Hamilton \tabularnewline
+%sjha252@g.uky.edu
+ &  Michael Hallstrom \tabularnewline
+%mikehall0995@gmail.com
+\end{tabular}
+ } % Your name
+
+\date{\normalsize\today\\Due 28 Sept 11:59} % Today's date or a custom date
+
+
+\usepackage{tikz}
+\newcommand*\cx[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ latexsym }
+\usepackage{graphicx}
+\usepackage[americanresistors,siunitx]{circuitikz}
+\usepackage{soul}
+\sethlcolor{yellow}
+\usepackage{physics}
+\usepackage{float}
+
+
+
+
+\begin{document}
+
+\maketitle % Print the title
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+%\section*{Problem title}
+%\stepcounter{section}
+The \textbf{purpose} of Lab 4 is, to compare direct measurements of the effective
+resistance of a collection of resistors to the values predicted by the series
+and parallel formulas. A few technical terms that will be used in this report
+are Voltage $V [V]$, resistance $R [\Omega]$, current $I [A]$. They are
+related by Ohm's law as $V=IR$. We measured the resistance of the four ohmic devices
+labeled $R_a,R_b,R_c.R_d$ by three different methods:
+(i) Color code of resistor (ii) Ohm's law (iii) Direct measurement with a digital multimeter (DMM).
+%\section*{Part 1}
+%\begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 7}
+%  Taking all of part 1 into consideration, determine the resistance of each of
+%  the resistors to the best of your ability.
+%\end{bclogo}
+
+Of these three methods, \textbf{Method (3) is most accurate} because it has
+lowest \% error\footnote{This answers Problem 7. However see Data section.}, and we report these resistor values as
+$R_a=989\pm 0.5\,\Omega, R_b=494.8\pm 0.5\,\Omega,R_c= 1982\pm 0.5\,\Omega,
+R_d=1481\pm 0.5\,\Omega$.
+\section{Procedure}
+\textbf{Part I: Calculation of Resistances using 3 Methods.} We explain here how the resistor of each resistor in Step 7 is calculated.
+
+\begin{itemize}
+  \item[(1)] \textbf{Color code} The four band color code for
+    brown-black-red-gold is, since brown=1,black=0,
+    red=$10^2$, gold=5\%
+    $\Rightarrow R_a = 10\cdot 10^2 \pm 5\%=1000\pm (1000\cdot
+    5\%)=1000\pm 50 \,\Omega$. To find $R_b=\frac{R_a}{2}$, note since
+the resistors are in parallel, so we use
+$\frac{1}{R_b}=\frac{1}{R_a}+\frac{1}{R_a} = \frac{R_a}{2}.$ To find
+$R_c=2R_a$, note since the resistors are in series we use
+$R_c=R_a+R_a=2R_a$. To find $R_d \Rightarrow R_d = R_{ab}+R_c$.
+  \item[(2)] \textbf{Ohm Law} The voltage and current is measured, then use
+    $V=IR \Rightarrow R= \frac{V}{I}$.
+  \item[(3)] \textbf{DMM} The $\Omega$ setting is used and two DMM wires are
+    applied at the end of the resistors.
+\end{itemize}
+
+
+%\begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 17}
+%  Create a schematic drawing of the circuit you have constructed. 
+%\end{bclogo}
+\section{Data}
+
+%\section*{Part 4}
+
+
+%\begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 19}
+% The focus of your report is Part 4. \hl{You will need to explain how you
+% determined the resistance of each of your resistors from step 7}, but you do
+% not need to discuss parts 2 or 3 at all. Remember that the report should be
+% two pages or less and follow the guidelines in rubric and example for lab
+% reports 
+%\end{bclogo}
+\textbf{Resistor Values for part 1 using 3 methods.}\footnote{This answers
+  Problem 7 and Problem 19}
+\begin{center}
+\begin{tabular}{llll}
+    & $R_\text{colorCode} \pm \delta R_\text{colorCode}$ & $R_\text{DMM} \pm \delta R_\text{DMM}$ & $R_\text{DMM}\pm  \delta R_\text{DMM}$ \\
+Ra &$1000\pm 50.00 $&$947.36842  \pm  26.2465 $&$ 989 \pm 0.5$\\
+Rb &$500 \pm 25.00 $&$481.25     \pm 60.7812  $&$494.8\pm 0.5$\\
+Rc &$2000\pm 100.00$&$1950       \pm  100     $&$1982 \pm 0.5$\\
+Rd &$1500\pm 75.00 $&$1423.07692 \pm  56.6568 $&$1481 \pm 0.5$
+\end{tabular}
+\end{center}
+
+
+
+% \begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 20}
+%  Create a small scatterplot to display your data for Part 4 only to show that
+%  18c $R_{\text{effective}}$ accurately predicts the effective resistance of your circuit.
+% \end{bclogo}
+
+\textbf{Part 4: Mixed Circuit.}\footnote{This answers Problem 17}\begin{figure}[H]
+  \caption{Schematic Diagram of Mixed Circuit,$R_{eq}=3795\Omega$ }
+\centering
+%\begin{center}
+ % \textbf{Fig 1.} Schematic Diagram of Mixed Circuit,$R_{eq}=3795\Omega$ \\
+\scalebox{0.35}{
+  \begin{tikzpicture}[scale=1]
+  \draw
+  (0,0) to [resistor,l=D](0,5) to (0,6) to (2,6) to [resistor,l=C](4,6) to (6,6)
+  % begin loop
+  (6,6) to [resistor,l=B](6,3)
+  % bottom of look is (6,3)
+  to (9,3) to (9,4) to [resistor,l=A](9,5) to (9,6) to (6,6)
+  (6,3) to [ammeter](6,0) to (3,0)
+  (0,0) to [battery](3,0)
+  ;
+\end{tikzpicture}
+\hspace{.5in} \hspace{.5in}
+}
+%\end{center}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.6]{p.jpg}
+\caption{Equiv Resistance for mixed circuit. Note all 3 values within each other's error bars. }
+\end{figure}
+
+%\begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 21}
+% Explain how your group determined the equation for $R_{\text{effective}}$.
+% Then use the final scatter plot to show that your equation is correct.
+%\end{bclogo}
+\textbf{Calculation of $R_\text{effective}$.}\footnote{This answers Problem 20}
+To determine $R_{\text{effective}}$ of the mixed resistors of part 4, we refer to
+Fig 2.1. Note $R_A=989\pm 0.5$ and $R_B=494.8 \pm 0.5$ are in parallel 
+$\Rightarrow R_{AB}= 329.80 \pm 0.5 $. Then $R_{AB}$ are in series with $R_C$
+and $R_D$ so
+\begin{align}
+  \begin{split}
+R_{\text{effective}} &= \left(  R_{AB}+R_C+R_D\right) \\ &= \left( 329.80 \pm 0.5 +
+  1982.0+\pm 0.5 + 1481.0\pm 0.5  \right)\,\Omega \\ &= 3792.8 \pm 0.5\,\Omega
+  \end{split}
+\end{align}
+
+% \begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 22}
+%  Explain how $\delta R_{\text{effective}}$ is calcuated by evaluating the formula
+%  \begin{align*}
+%    \delta X (y_1,y_2,\ldots) = \sum_{\text{all }y_i} \left| \frac{\partial}{\partial y_i}[X]\cdot \partial y_i  \right|
+%  \end{align*}
+% \end{bclogo}
+
+\textbf{Calculation of $\delta R_\text{effective}$.}\footnote{This answers
+  Problem 22.} For $y_1=V$, $y_2=I$, and
+$X=R$ using the following notation:
+   $\delta X (y_1,y_2,\ldots) = \sum_{\text{all }y_i} \left| \frac{\partial}{\partial y_i}[X]\cdot \partial y_i  \right|$
+
+, and using $R=\frac{V}{I}$,
+\begin{align*}
+   \delta R &= \left|  \pdv{R}{V}\delta V\right| +\left|  \pdv{R}{I}\delta I\right|  
+  =\left| \pdv{\left( \frac{V}{I} \right)}{V}\,\partial V \right|+
+  \left| \pdv{\left( \frac{1}{I} \right)}{I}\,\partial I \right| =\left| \pdv{V}{I} \right| +\left| V\frac{(-1)}{I^2}\,\partial I \right| \\
+  &=\left| \pdv{V}{I} \right| +\left| V\frac{(-1)}{I}\,\frac{\partial I}{I} \right| 
+  =\left| \pdv{V}{I} \right| +\left| R \,\frac{\partial I}{I} \right| 
+                          =\left| \frac{\partial V}{I}\frac{I}{V}\right| +\left| \frac{\partial I}{I} \right| \;\Rightarrow\; \text{so finally} \\
+  \frac{\partial R}{R} &= \frac{\partial V}{V}+\frac{\partial I}{I}
+\:\text{or}\:\partial R = R\left(\frac{\partial V}{V}+\frac{\partial I}{I}\right).
+\end{align*}
+
+\section{Conclusion}
+
+% \begin{bclogo}[noborder=true,logo=\bcdanger]{Problem 23}
+%  What was the single largest source of uncertainty in your experiment? Is it
+%  systematic or random? How is this or should this be incorporated in your scatterplot?
+% \end{bclogo}
+\textbf{Largest source of uncertainty.}\footnote{This answers problem 23.}
+largest source of uncertainty is resistance $R$ of resistors. These values are
+larger than systematic uncertainty such as heating of the wires. Of the 3
+methods discussed, the color codes (with gold having 5\% uncertainty) have the
+most error as discussed above, and is smallest for the DMM.
+
+\end{document}
+
+

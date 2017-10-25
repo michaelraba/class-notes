@@ -1,0 +1,11 @@
+,Length of T(cm):,Space btw Currents(mm),Amps(A),Filcrum distance(cm),Clipboard Distance(cm),Gravity,SOurce uncertainty 
+Value,26.6,6.5,N/A,21.5,206,9.81,
+Uncertainty,0.05,0.005,0.5,0.05,0.05,,only +.16
+,,,,,,,
+,Trial 1,Trial 2,Trial 3,Trial 4,Trial 5,,
+Weight(mg),10,20,50,70,100,,
+Amps(A),6.5,8,10,12,14,,
+Space(mm),6.22,6.08,5.7,5.45,5.1,,
+,,,,,,,
+Mu,0.00000034,0.00000044,0.00000066,0.00000061,0.00000060,,
+0.000001256,,,,,,,
