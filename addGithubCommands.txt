@@ -1,6 +1,0 @@
-add init # initialize local dir as a git rep
-git add . # add files in local repo. stages for first commit
-git commit -m "Add message here"
-git remote add origin https://github.com/michaelraba/helloworld.git 
-git remote set-url origin  https://github.com/michaelraba/helloworld.git 
-git push -u origin master      # will ask for username/pw
