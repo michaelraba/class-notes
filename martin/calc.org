@@ -1,0 +1,14 @@
+#+TITLE: Calc
+
+* Problem 1
+
+\begin{aligned}
+u_{t} &=\Delta_{x} u-c u+f \text { on } \mathbb{R}^{n} \times(0, \infty) \\
+u(x, 0) &=g(x)
+\end{aligned}
+
++ Ansatz:
+
+  - We are given IVP problem with inhomogeneous term.
+
+    $\begin{aligned}u(x, t) &=\int_{0}^{t} \int_{\mathrm{R}^{n}} \Phi(x-y, t-s) f(y, s) d y d s \\ &=\int_{0}^{t} \frac{1}{(4 \pi(t-s))^{n / 2}} \int_{\mathbb{R}^{n}} e^{-\frac{|x-y|^{2}}{4(t-s)}} f(y, s) d y d s \quad\left(x \in \mathbb{R}^{n}, t>0\right) \end{aligned}$

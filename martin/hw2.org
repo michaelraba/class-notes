@@ -1,0 +1,349 @@
+#+LATEX_HEADER: \usepackage{siunitx}
+:PROPERTIES:
+:ID:       8799b137-dd96-47dc-bd87-c2a9566b3bce
+:END:
+#+TITLE: Hw2
+
+file:///home/michael/Downloads/High%20Enthalpy%20Gas%20Dynamics%20by%20Ethirajan%20Rathakrishnan%20(z-lib.org).pdf
+
+[[file:../org/.attach/87/99b137-dd96-47dc-bd87-c2a9566b3bce/screenshot-20201010-141354.png]]
+
+
++ Part a)
+
+  + To find $\gamma= \gamma(T)$ , calculate $\,c_v(T)$.
+
+    -The specific heat with constant volume of $\,CO_2$ has 4 vibrational modes. By Anderson Chapter 16,
+
+
+
+$c_{v,CO2}=\frac32R_{CO_2}+ R _{CO_2}+R_{CO_2}\left\{ \sum_{j=1}^{\# \text{vib mode }}} \frac{R \theta^2 \exp\left(\frac{\theta}{T} \right)}{T^2 \times \left( \exp\left( \frac{\theta}{T} \right) - 1 \right)^2}\right\}$
+
+
+
+     + where:
+
+       + $R=\frac{\mathcal{R}}{\mathcal{M}_s} =\frac{8314}{44} = \SI{188.92}{\joules\per\kilo\gram\per\kelvin}$   for  $\mathcal{R} = \SI{8314}{\joule \per\kilo\gram\per\kelvin}$
+
+                                       |--------------------+---------|
+                                       | vibrational mode i | theta_i |
+                                       |--------------------+---------|
+                                       |                  1 |     952 |
+                                       |                  2 |     952 |
+                                       |                  3 |    1890 |
+                                       |                  4 |    3360 |
+                                       |--------------------+---------|
+
++ $c_p^{s}(T)= c_v^{s}(T) + R/M_s   = c_v^{s}(T) + 188.92$
+
++ $\gamma =\frac{c_p}{c_v} =\frac{  c_v^{s}(T) + 188.92   }{c_v}$
+
+  + Plot of $\,\gamma_{CO2}$:
+
+[[file:./images/screenshot-03.png]]
+
+
+
+
++ b)
+
+  + Using *Poisson equation*
+  $\frac{p_{2}}{p_{1}}=\left(\frac{\rho_{2}}{\rho_{1}} \right)^{\gamma}=\left(\frac{T_{2}}{T_{1}}\right)^{\gamma /(\gamma-1)}$          (*)
+
++ and isentropic relation
+   $c_{p}T+\frac{V^{2}}{2}=c_{p} T_{0}=$ constant
+
+  - Rearrange this to give:
+
+    + $\frac{T_{0}}{T}=1+\frac{V^{2}}{2 c_{p}T}$   (**)
+
+      - For perfect gas,
+
+        + $c_{p}=\frac{\gamma}{\gamma-1}R$
+
+        + Using this in (**)
+          $\frac{T_{0}}{T}=1+\frac{V^{2}}{2 \gamma RT /(\gamma-1)}$
+
+        + Using $\gamma RT=a^{2}$:
+
+          - $\frac{T_{0}}{T}=1+\frac{V^{2}}{2 a^{2}/(\gamma-1)}$
+
+        + Then:
+
+        $\frac{T_{0}}{T}= 1+\frac{\gamma-1}{2} M^{2}$    (***)
+
+      - Using (*) and (***)
+
+        $\frac{p_{0}}{p}=\left(1+\frac{\gamma-1}{2} M^{2}\right)^{\gamma  /(\gamma-1)}$
+
+
+
+
+
+* In q2c did you solve iteratively T2/T1 as a function of gamma(T2) or used value of T2 from the previous M1?
+
+
+
++ molecular weight of CO2:
+  + 44.009 kg/mole
+
+
++ Part (c)
+
+
+[[file:./images/screenshot-04.png]]
+
+* Problem_3
+
+[[file:./images/screenshot-05.png]]
+
+
++ *Derivation of Quantities:*
+
+  + Ideal gas constant $R_s$ for species $\,s=\left \{ N_2,O_2 \right\}$ is from following:
+     + $\frac{\alpha^{2}}{1-\alpha}=\frac{\rho_{d}}{\rho} \exp \left(\frac{-\theta_{d}}{T}\right)$ where $\alpha \equiv \frac{m_{A} n_{A}}{m_{A} n_{A}+m_{A_{2}} n_{A_{2}}}$
+for
+
+                                      |----+---------+--------|
+                                      |    | theta_d |  rho_d |
+                                      | N2 |  1.13e5 | 1.30e5 |
+                                      | O2 |   5.9e4 |  1.5e5 |
+                                      |----+---------+--------|
+
+
++ *Energy*
+
+  - terms: Translational, Rotational, vibrational (one mode only since chemical struction has 1 degree of freedom only; cf. CO2 which has  4 degrees of freedom).
+
+         +  $e=\frac32R_{N2}T+ R _{N2}T+R_{N2}T       \frac{\theta_{N2}}{\exp\left( \frac{\theta_{N2}}{T} \right) - 1}$
+
+
+# [calc-mode: language: latex]
+
++ *Specific heat capacity constant volume:*
+
+         + $c_v(T)=\frac{5}{2} R_{N2} + \frac{R_{N2} \frac{ \theta^{2} \exp \left(\frac{\theta}{T}\right)}{T^{2} \times\left(\exp \left(\frac{\theta}{T}\right)-1\right)^{2}}$
+
+
+*Analysis:*
+
++ From fig for $\,c_v$ and $c_p$, $N_2$ has higher heat capacity in both constant volume and pressure case.
+
+  - this is due to the chemical structure of $N_2$, which has triple bond structure, compared to $O_2$ , whose Lewis structure is double bond.
+
+  - $\therefore$ it takes $N_2$ longer than $O_2$ to absorb heat, since $N_2$ has a higher heat capacity than $O_2$
+  - *Energy  $e$.* When heat is absorbed in $N_2$, the amount of energy released by $N_2$ when bonds are broken is higher than $O_2$ (also evidenced by the graph of $e(T)$) for same reason (triple bond for $N_2$ vs double bond lewis structure for $O_2$)
+
+    + The extreme case is hydrogen, which has highest heat capacity of all substances. When its bonds is broken a huge amount of energy is released (Manhattan Project).
+
+
+
+
+
+[[file:./images/screenshot-06.png]]
+
+
+
+[[file:./images/screenshot-07.png]]
+
+[[file:./images/screenshot-08.png]]
+
+[[file:./images/screenshot-09.png]]
+
+
+
+
+
+
+
+No M1=U/a=12.1e3/sqrt(gamma*R*T(h=71.2km))
+
++ Vibrational Temperatures for each species at given pressures
+
+|----+-------------+----------------|
+|    | rho = 1 atm | rho =0.001 atm |
+|----+-------------+----------------|
+| O2 |       2.5e3 |          1.8e3 |
+| N2 |       4.8e3 |          3.6e3 |
+|----+-------------+----------------|
+
+
+[[file:./images/screenshot-11.png]]
+
+.0000742 (table)
+
+* Problem 4
+
+
++ v =12.1e3
+  a_{at 71.2 km} = 295.528 m/s
+  M = v/a \approx 40.94
+  $a_1=\sqrt{\gamma \frac{p_1}{\rho_1}$
+
+sqrt(@11$6*@5$6/@8$6)
+
+
+
+
+
+
++ Part (b)   - ideal gas
+
+|---------------------+----------------------+--------------+--------------+------------------------+-----------------------+------------------------|
+| For Part (b) only!  |    In front of shock | behind shock | ratio  value |                        | behind shock (actual) | formula for excel cell |
+| gamma=1.4           | (actual, not scaled) |              |              |                        |                       |                        |
+|---------------------+----------------------+--------------+--------------+------------------------+-----------------------+------------------------|
+| Ma                  |                40.94 | Ma           |              |                        |               0.37854 |                        |
+| T  [k]              |             217.3478 | T2/T1        |     326.8495 | T2                     |              7.1040e4 | @4$4*@4$2              |
+| pressure [bar]      |                4.654 | p2/p1        |   1955.26419 | p2                     |             9099.7995 | @5$4*@5*2              |
+| stagnation pressure |                      | p02/p01      | 3.09733e-006 |                        |                       |                        |
+|                     |                      | p1/p02       |   0.00046328 |                        |                       |                        |
+| rho     [kg/m^3]    |            0.0001170 | rho2/rho1    |      5.98215 | rho2                   |              6.999e-4 | @8$4*@8$2              |
+| velocity            |               12.1e3 |              |              | v_2                    |             0.0000708 |                        |
+| a                   |              295.528 |              |              | a_2=sqrt{\gamma*R*T_2} |             5342.6473 | sqrt(@11$2*@12$2*@4$6) |
+| gamma               |                  1.4 |              |              |                        |                   1.4 |                        |
+| R_{air}             |                  287 |              |              | R                      |                   287 |                        |
+|---------------------+----------------------+--------------+--------------+------------------------+-----------------------+------------------------|
+#+TBLFM: $7=@5$4*@5*2::$8=@4$4::@4$7=@4$4*@4$2::@5$7=@5$4*@5$2::@8$7=@8$4*@8$2::@9$6=@3$6*@10$6::@10$6=sqrt(@11$2*@12$2*@4$6)
+
+
++ Part (c)   - Real gas
+
+|---------------------------+----------------------+--------------+--------------+------------------------+-----------------------+------------------------|
+| For Part (c) only!        |    In front of shock | behind shock | ratio  value |                        | behind shock (actual) | formula for excel cell |
+| gamma=1.4                 | (actual, not scaled) |              |              |                        |                       |                        |
+|---------------------------+----------------------+--------------+--------------+------------------------+-----------------------+------------------------|
+| Ma                        |                40.94 | Ma           |              |                        |                       |                        |
+| T [K]                     |             217.3478 | T2/T1        |              | T2                     |                       | @4$4*@4$2              |
+| pressure [N/m^2]=[Pa]     |                4.654 | p2/p1        |              | p2                     |                       | @5$4*@5*2              |
+| stagnation pressure       |                      | p02/p01      |              |                        |                       |                        |
+|                           |                      | p1/p02       |              |                        |                       |                        |
+| rho                       |            0.0001170 | rho2/rho1    |              | rho2                   |                       | @8$4*@8$2              |
+| velocity                  |               12.1e3 |              |              | v_2 = M2*a2            |                       | @3$6*@10$6             |
+| a                         |              295.528 |              |              |                        |                       | sqrt(@11$2*@12$2*@4$6) |
+| gamma                     |                  1.4 |              |              |                        |                       |                        |
+| R_{air}                   |                  287 |              |              | R                      |                       |                        |
+|---------------------------+----------------------+--------------+--------------+------------------------+-----------------------+------------------------|
+| Enthalpy h_1 c_p/T  J/mol |              62995.0 |              |              |                        |                       |                        |
+|                           |                      |              |              |                        |                       |                        |
+#+TBLFM: $7=@5$4*@5*2::$8=@4$4::@4$7=@4$4*@4$2::@5$7=@5$4*@5$2::@8$7=@8$4*@8$2::@9$6=@3$6*@10$6::@10$6=sqrt(@11$2*@12$2*@4$6)
+
+[[file:./images/screenshot-10.png]]
+
+
++ Part (a)
+
+$\text{number}_\text{target}=\frac{4.654e5 Pa}{\left(1.38e-23 J/K \right)(217 k)}=1.55e26$
+
+$\ell_\text{mean free path}= \frac{1}{   \text{number}_\text{target}\sigma } = 1/{(1.55e26 \cdot 50e-20 )}=1.29e-8$
+Then
+
+$Kn = \frac{\ell}{L}= \frac{1.29e-8}{0.8} = 1.6e-6$, which is $< 0.1$, so continuum analysis is valid.
+
+
+$h_{1}+\frac{V_{1}^{2}}{2}=h_{2}+\frac{V_{2}^{2}}{2}$
+
+
+
+$h_{2}=h_{1}+\frac{V_{1}^{2}}{2}\left\{1-\left(\frac{\rho_{1}}{\rho_{2}}\right)^{2}\right\}$
+
+
+
+M_1 = v/a
+v=
+
+
+
++ part (c)
+
+  + mass conservation
+
+$\rho_{1} V_{1}=\rho_{2} V_{2}$
+
+  + momentum conservation
+$p_{1}+\rho_{1} V_{1}^{2}=p_{2}+\rho_{2} V_{2}^{2}$
+
+
+  + energy conservation
+
+$h_{1}+\frac{V_{1}^{2}}{2}=h_{2}+\frac{V_{2}^{2}}{2}$
+
+
++ avoid solving iteratively and using implicit relations, which is onerous because we have high enthalpy values and there are no
+  readily available implicit graph or relation for $p_{2}=p\left(\rho_{2}, h_{2}\right)$
+  + make assumption that $u_2=0$.
+  + Then:
+*** DONE + $p_{2}=p_{1}+\rho_{1} u_{1}^{2} =  17134.624$    (Note, this may need to be be closer to 8000?) But remember its approx only.
+
+    Also:
+
+    + $h_{1}=c_{p}T_{1}=241955$
+
+    +
+        $h_{0}=h_{1}+.5u_{1}^{2}= 285623.39$
+
+
+
+    ** Explain how this T value is solved for!
+    => After a a certain point it doesn't matter what c_p(big temperature) is.
+
+   *  $T_{2}=\frac{c_{p}(218) \cdot 218+0.5 \cdot\left(12.1 \cdot 10^{3}\right)^{2}}{c_{p}(100000)} \approx 5.13e4$ K.
+***
+
+* TODO +remove # remove Can solve for $h_2 = c_{p}\ \cdot T_{1}+.5\cdot u_{1}^{2}= 285623.399$o
+
+    + Finally, from Problem 3, we can compute $\rho_2$,
+
+      + Corrected this:
+         $\rho_{2}=\frac{p_{2}}{R(T_1)T_{1}} = 1.09e-3$   # was 0.0002247
+
+         Where, from Problem 3, we computed $c_v$ and $c_p$, so
+         $\therefore \,\,\,\, R = \left( c_p - c_v\right)=c_p(T_2) - c_v(T_2)$
+
+      $= \left(c_{p N 2 r h o 2}(10000) \cdot .88+c_{p O 2 r h o 2}(1000) \cdot .22\right) \\\,\,\,\,\,\,\,\hspace{0.3in} - \left(c_{v N 2 r h o 2}(10000) \cdot .88+c_{v 02 r h o 2}(10000) \cdot .22 \right) \\ =305$
+
+
+$(u_2,\rho_2, p_2 , T_2 , v_2  )\approx (0,   1.09e-3,  1.7e4      , 5.13e4, 0 )$
+
+# when doing iteration approach, maybe can assume what rho is, instead of finding it.
+
+* Part (d): Calculate
+** Temperature
+** pressure
+
+$\frac{p_{2}}{p_{1}}=1+\frac{2 \gamma}{\gamma+1}\left(M_{1}^{2}-1\right)$
+
+
+***** $\frac{\rho_{2}}{\rho_{1}}=\frac{(\gamma+1) M_{1}^{2}}{2+(\gamma-1) M_{1}^{2}}$
+***** $\frac{T_{2}}{T_{1}}=\frac{h_{2}}{h_{1}}=\frac{a_{2}^{2}}{a_{1}^{2}}=1+\frac{2(\gamma-1)}{(\gamma+1)^{2}} \frac{\left(\gamma M_{1}^{2}+1\right)}{M_{1}^{2}}\left(M_{1}^{2}-1\right)$
+***** $\frac{p_{02}}{p_{01}}=\left(1+\frac{2 \gamma}{\gamma+1}\left(M_{1}^{2}-1\right)\right)^{-1 /(\gamma-1)}\left\{\frac{(\gamma+1) M_{1}^{2}}{(\gamma-1) M_{1}^{2}+2}\right\}^{\gamma /(\gamma-1)}$
+
+***** Assume flow declerates isentropically from state 2, which is immediately behind the normal shock to the stagnation point 2, which is outside
+the thermal boundary layer, and $\gamma \approx 1.274$ behind the shock,
+
+$\therefore\,\,\,\frac{p_{1}}{p_{02}}=\frac{\left(\frac{2 \gamma}{\gamma+1} M_{1}^{2}-\frac{\gamma-1}{\gamma+1}\right)^{1 /(\gamma-1)}}{\left(\frac{\gamma+1}{2} M_{1}^{2}\right)^{\gamma /(\gamma-1)}}$
+
+$\Rightarrow  p_{02}= 8547$
+***** $\therefore\,\,\,\frac{T_{02}}{T_{1}}=\frac{T_{01}}{T_{1}}=\left(1+\frac{\gamma-1}{2} M_{1}^{2}\right)$
+
+$\rightsquigarrow = T_{02} =T_1 \left(1+\frac{\gamma-1}{2} M_{1}^{2}\right) =  47783.4$
+***** We have hypersonic flow (huge Mach number $\gg 5$) , so we can simplify above as
+
+
+    $p_{2} \approx p_{02} \approx \rho_{1} V_{1}^{2}$     $\rightsquigarrow$
+
+$p_{2} \approx p_{02} \approx 2 \times \frac{1}{2} \rho_{1} V_{1}^{2} = 10.218$
+
+
+
+* Part (E)
+
++ To calculate the temperature at the surface of the vehicale, this is the same
+  - $\Rightarrow$ find A$T_{wall}$  .
+
+    + $T_{r}=T_{w}$
+    + $\dot{q}=\varepsilon \sigma T_{w}^{4}$
+      - $(\sigma)$ is $5.67 \times 10^{-8} \mathrm{W} /\left(\mathrm{m}^{2} \mathrm{K}^{4}\right)$
+
+      -
+        $T_w = \left\{\frac{\dot{q}}{\varepsilon}\sigma\right\}^{\frac14} = \SI{1524}$ K.
